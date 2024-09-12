@@ -1,0 +1,28 @@
+import 
+
+def guess_the_number():
+    # توليد رقم عشوائي بين 1 و 100
+    number_to_guess = random.randint(1, 100)
+    guess = None
+    attempts = 0
+
+    print("مرحبًا في لعبة تخمين الرقم!")
+    print("لقد اخترت رقمًا بين 1 و 100. حاول تخمينه.")
+
+    while guess != number_to_guess:
+        # طلب إدخال من المستخدم
+        guess = int(input("أدخل تخمينك: "))
+        attempts += 1
+        
+        # التحقق من التخمين
+        if guess < number_to_guess:
+            print("الرقم الذي تخمينه أقل من الرقم الصحيح. حاول مرة أخرى.")
+        elif guess > number_to_guess:
+            print("الرقم الذي تخمينه أكبر من الرقم الصحيح. حاول مرة أخرى.")
+        else:
+            print(f"مبروك! لقد خمنت الرقم الصحيح {number_to_guess} في {attempts} محاولات.")
+            break
+
+# تشغيل اللعبة
+if __name__ == "__main__":
+    guess_the_number()
